@@ -15,6 +15,9 @@ def validar_temperatura(temp_actual):
     if temp_actual > LIMITE_ALERTA_GLOBAL:
         return True # Hay alerta
     return False # Todo normal
+def calibrar_sensor(temperatura, ajuste):
+    temperatura_calibrada = temperatura + ajuste
+    return temperatura_calibrada
 
 # Ejecución principal
 mostrar_encabezado()
@@ -24,3 +27,8 @@ if validar_temperatura(lectura_sensor):
     print("¡PELIGRO! Temperatura excede el límite operativo.")
 else:
     print("Estado del motor: Operativo y estable.")
+
+print("\n--- Modo Calibración ---")
+ajuste_tecnico = 2.5
+lectura_sensor = calibrar_sensor(lectura_sensor, ajuste_tecnico)
+print(f"Temperatura tras calibración: {lectura_sensor}°C")
