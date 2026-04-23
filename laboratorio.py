@@ -32,3 +32,5 @@ print("\n--- Modo Calibración ---")
 ajuste_tecnico = 2.5
 lectura_sensor = calibrar_sensor(lectura_sensor, ajuste_tecnico)
 print(f"Temperatura tras calibración: {lectura_sensor}°C")
+
+# Revisado por el ingeniero jefe de planta
